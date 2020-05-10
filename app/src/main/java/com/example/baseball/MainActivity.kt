@@ -3,10 +3,11 @@ package com.example.baseball
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var editText: EditText
-    lateinit var button: Button
+    //lateinit var button: Button
     lateinit var button2: Button
     lateinit var listView: ListView
     var list: ArrayList<String> = ArrayList()
@@ -19,13 +20,13 @@ class MainActivity : AppCompatActivity() {
         title = "Baseball v1.0"
         listView = findViewById(R.id.listView)
         editText = findViewById(R.id.editText)
-        button = findViewById(R.id.button)
+        //button = findViewById(R.id.button)
         button2 = findViewById(R.id.button2)
         arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
 
         Toast.makeText(applicationContext, answer, Toast.LENGTH_LONG).show()
 
-        button.setOnClickListener {
+        button.setOnClickListener() {
             val output = getAnswer(editText.text.toString())
             list.add("(${idx}) : ${editText.text.toString()} => ${output}")
 
